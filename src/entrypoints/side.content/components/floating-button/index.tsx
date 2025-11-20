@@ -1,8 +1,8 @@
-import { browser, i18n } from "#imports"
+import { i18n } from "#imports"
 import { IconSettings, IconX } from "@tabler/icons-react"
 import { useAtom, useAtomValue } from "jotai"
 import { useEffect, useRef, useState } from "react"
-import readFrogLogo from "@/assets/icons/read-frog.png?url&no-inline"
+import { BrandLogo } from "@/components/brand-logo"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,8 +20,6 @@ import { enablePageTranslationAtom, isDraggingButtonAtom, isSideOpenAtom } from 
 import { shadowWrapper } from "../../index"
 import HiddenButton from "./components/hidden-button"
 import TranslateButton from "./translate-button"
-
-const readFrogLogoUrl = new URL(readFrogLogo, browser.runtime.getURL("/")).href
 
 export default function FloatingButton() {
   const [floatingButton, setFloatingButton] = useAtom(
@@ -191,11 +189,7 @@ export default function FloatingButton() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <img
-          src={readFrogLogoUrl}
-          alt={APP_NAME}
-          className="ml-[5px] h-8 w-8 rounded-full"
-        />
+        <BrandLogo alt={APP_NAME} className="ml-[5px] h-8 w-8 rounded-full" />
       </div>
       <HiddenButton
         className={attachSideClassName}
