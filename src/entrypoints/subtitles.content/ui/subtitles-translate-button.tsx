@@ -1,5 +1,5 @@
 import { useAtomValue, useSetAtom } from "jotai"
-import logo from "@/assets/icons/read-frog.png"
+import { BrandLogo } from "@/components/brand-logo"
 import { TRANSLATE_BUTTON_CLASS } from "@/utils/constants/subtitles"
 import { cn } from "@/utils/styles/utils"
 import {
@@ -32,8 +32,7 @@ export function SubtitlesTranslateButton() {
           : "bg-transparent",
       )}
     >
-      <img
-        src={logo}
+      <BrandLogo
         alt="Subtitle Toggle"
         className={cn(
           "w-8 h-8 transition-all duration-200 object-contain block",
