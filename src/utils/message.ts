@@ -44,6 +44,8 @@ interface ProtocolMap {
   // cache management
   clearAllTranslationRelatedCache: () => Promise<void>
   clearAiSegmentationCache: () => Promise<void>
+  // theme
+  updateThemeIcon: (data: { isDark: boolean }) => void
 }
 
 export const { sendMessage, onMessage }

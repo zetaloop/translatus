@@ -77,6 +77,20 @@ export default defineBackground({
       await cleanupAllAiSegmentationCache()
     })
 
+    onMessage('updateThemeIcon', async (message) => {
+      const { isDark } = message.data
+      const iconPath = isDark ? 'icon/dark' : 'icon/light'
+      await browser.action.setIcon({
+        path: {
+          16: `${iconPath}/16.png`,
+          32: `${iconPath}/32.png`,
+          48: `${iconPath}/48.png`,
+          96: `${iconPath}/96.png`,
+          128: `${iconPath}/128.png`,
+        },
+      })
+    })
+
     newUserGuide()
     translationMessage()
 
