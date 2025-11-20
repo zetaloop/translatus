@@ -36,7 +36,7 @@ export default defineConfig({
     ...(manifestKey ? { key: manifestKey } : {}),
     name: '__MSG_extName__',
     description: '__MSG_extDescription__',
-    default_locale: 'en',
+    default_locale: 'zh_CN',
     icons: {
       16: 'icon/16.png',
       32: 'icon/32.png',
