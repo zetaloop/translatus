@@ -34,6 +34,8 @@ interface ProtocolMap {
   backgroundFetch: (data: ProxyRequest) => Promise<ProxyResponse>
   // cache management
   clearAllCache: () => Promise<void>
+  // theme
+  updateThemeIcon: (data: { isDark: boolean }) => void
 }
 
 export const { sendMessage, onMessage }
