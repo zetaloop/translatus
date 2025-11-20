@@ -76,6 +76,8 @@ interface ProtocolMap {
   // offscreen internal
   ttsOffscreenPlay: (data: TTSPlaybackStartRequest) => Promise<TTSPlaybackStartResponse>
   ttsOffscreenStop: (data: TTSOffscreenStopRequest) => Promise<{ ok: true }>
+  // theme
+  updateThemeIcon: (data: { isDark: boolean }) => void
 }
 
 export const { sendMessage, onMessage }
