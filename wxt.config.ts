@@ -37,6 +37,29 @@ export default defineConfig({
     name: '__MSG_extName__',
     description: '__MSG_extDescription__',
     default_locale: 'en',
+    icons: {
+      16: 'icon/16.png',
+      32: 'icon/32.png',
+      48: 'icon/48.png',
+      96: 'icon/96.png',
+      128: 'icon/128.png',
+    },
+    action: {
+      default_icon: {
+        16: 'icon/light/16.png',
+        32: 'icon/light/32.png',
+        48: 'icon/light/48.png',
+        96: 'icon/light/96.png',
+        128: 'icon/light/128.png',
+      },
+      theme_icons: [
+        { light: 'icon/light/16.png', dark: 'icon/dark/16.png', size: 16 },
+        { light: 'icon/light/32.png', dark: 'icon/dark/32.png', size: 32 },
+        { light: 'icon/light/48.png', dark: 'icon/dark/48.png', size: 48 },
+        { light: 'icon/light/96.png', dark: 'icon/dark/96.png', size: 96 },
+        { light: 'icon/light/128.png', dark: 'icon/dark/128.png', size: 128 },
+      ],
+    },
     permissions: ['storage', 'tabs', 'alarms', 'cookies'],
     host_permissions:
       mode === 'development'
@@ -53,6 +76,13 @@ export default defineConfig({
         gecko: {
           id: 'extension@readfrog.app',
           strict_min_version: '109.0',
+          theme_icons: [
+            { light: 'icon/light/16.png', dark: 'icon/dark/16.png', size: 16 },
+            { light: 'icon/light/32.png', dark: 'icon/dark/32.png', size: 32 },
+            { light: 'icon/light/48.png', dark: 'icon/dark/48.png', size: 48 },
+            { light: 'icon/light/96.png', dark: 'icon/dark/96.png', size: 96 },
+            { light: 'icon/light/128.png', dark: 'icon/dark/128.png', size: 128 },
+          ],
         },
       },
     }),

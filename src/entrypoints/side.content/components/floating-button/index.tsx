@@ -9,7 +9,7 @@ import {
 import { cn } from '@read-frog/ui/lib/utils'
 import { useAtom, useAtomValue } from 'jotai'
 import { useEffect, useRef, useState } from 'react'
-import readFrogLogo from '@/assets/icons/read-frog.png'
+import { BrandLogo } from '@/components/brand-logo'
 import { configFieldsAtomMap } from '@/utils/atoms/config'
 import { APP_NAME } from '@/utils/constants/app'
 import { sendMessage } from '@/utils/message'
@@ -163,11 +163,7 @@ export default function FloatingButton() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <img
-          src={readFrogLogo}
-          alt={APP_NAME}
-          className="ml-[5px] h-8 w-8 rounded-full"
-        />
+        <BrandLogo alt={APP_NAME} className="ml-[5px] h-8 w-8 rounded-full" />
       </div>
       <HiddenButton
         className={attachSideClassName}
