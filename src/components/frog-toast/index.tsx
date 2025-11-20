@@ -1,24 +1,12 @@
-import { browser } from "#imports"
 import { kebabCase } from "case-anything"
 import * as React from "react"
 
 import { Toaster } from "sonner"
-import frogIcon from "@/assets/icons/read-frog.png?url&no-inline"
+import { BrandLogo } from "@/components/brand-logo"
 import { APP_NAME } from "@/utils/constants/app"
 
-const frogIconUrl = new URL(frogIcon, browser.runtime.getURL("/")).href
-
 const frogIconElement = (
-  <img
-    src={frogIconUrl}
-    alt="🐸"
-    style={{
-      maxWidth: "100%",
-      height: "auto",
-      minHeight: "20px",
-      minWidth: "20px",
-    }}
-  />
+  <BrandLogo className="h-5 w-5" alt="🐸" />
 )
 
 function FrogToast({ position = "bottom-left", toastOptions, ...props }: React.ComponentProps<typeof Toaster>) {

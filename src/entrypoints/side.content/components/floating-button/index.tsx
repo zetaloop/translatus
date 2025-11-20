@@ -1,8 +1,8 @@
-import { browser, i18n } from "#imports"
+import { i18n } from "#imports"
 import { IconLock, IconLockOpen, IconSettings, IconX } from "@tabler/icons-react"
 import { useAtom, useAtomValue } from "jotai"
 import { useEffect, useRef, useState } from "react"
-import readFrogLogo from "@/assets/icons/read-frog.png?url&no-inline"
+import { BrandLogo } from "@/components/brand-logo"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +21,6 @@ import { shadowWrapper } from "../../index"
 import HiddenButton from "./components/hidden-button"
 import TranslateButton from "./translate-button"
 
-const readFrogLogoUrl = new URL(readFrogLogo, browser.runtime.getURL("/")).href
 const floatingButtonControlClassName = cn(
   "absolute invisible cursor-pointer pointer-events-none flex size-6 items-center justify-center",
   "text-neutral-400 transition-[color,left,transform] duration-300 hover:scale-110 hover:text-neutral-600 active:scale-90 active:text-neutral-600",
@@ -179,11 +178,7 @@ export default function FloatingButton() {
           onMouseDown={handleButtonDragStart}
           onMouseEnter={handleMouseEnter}
         >
-          <img
-            src={readFrogLogoUrl}
-            alt={APP_NAME}
-            className="ml-1 h-8 w-8 rounded-full"
-          />
+          <BrandLogo alt={APP_NAME} className="ml-1 h-8 w-8 rounded-full" />
         </div>
 
         <FloatingButtonCloseMenu
