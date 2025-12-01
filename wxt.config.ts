@@ -11,6 +11,8 @@ const ALLOWED_BUNDLED_API_KEYS = new Set([
 const useLocalPackages = isLocalPackagesEnabled(process.env)
 const shouldSkipEnvValidation = process.env.WXT_SKIP_ENV_VALIDATION === "true"
 
+const manifestKey = process.env.READ_FROG_EXTENSION_KEY?.trim()
+
 // See https://wxt.dev/api/config.html
 export default defineConfig({
   srcDir: "src",
@@ -25,6 +27,7 @@ export default defineConfig({
       }
     : {},
   manifest: ({ mode, browser }) => ({
+    ...(manifestKey ? { key: manifestKey } : {}),
     name: "__MSG_extName__",
     description: "__MSG_extDescription__",
     default_locale: "en",
