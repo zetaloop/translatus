@@ -142,6 +142,24 @@ export default defineConfig({
                     + `Please unset these variables before building for production.\n`,
                   )
                 }
+
+                // Check required env vars only for zip builds
+                if (process.env.WXT_ZIP_MODE && process.env.CI) {
+                  const requiredEnvVars = [
+                    "WXT_GOOGLE_CLIENT_ID",
+                    "WXT_POSTHOG_API_KEY",
+                    "WXT_POSTHOG_HOST",
+                  ]
+                  const missing = requiredEnvVars.filter(key => !process.env[key])
+
+                  if (missing.length > 0) {
+                    throw new Error(
+                      `\n\nMissing required environment variables for zip:\n`
+                      + `${missing.map(k => `   - ${k}`).join("\n")}\n\n`
+                      + `Set them in .env.production or your environment.\n`,
+                    )
+                  }
+                }
               },
             },
           ]
